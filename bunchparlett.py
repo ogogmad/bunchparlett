@@ -22,13 +22,13 @@ def bppivot(M):
     mu0 = 0
     for i in range(M.rows):
         for j in range(M.rows):
-            if scabs(M[i,j]) > mu0:
-                mu0 = scabs(M[i,j])
+            if abs(M[i,j]) > mu0:
+                mu0 = abs(M[i,j])
                 exi, exj = i, j
     mu1 = 0
     for i in range(M.rows):
-        if scabs(M[i,i]) > mu1:
-            mu1 = scabs(M[i,i])
+        if abs(M[i,i]) > mu1:
+            mu1 = abs(M[i,i])
             exii = i
     if mu1 >= alpha * mu0:
         s = 1
