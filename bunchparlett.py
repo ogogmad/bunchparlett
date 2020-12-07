@@ -74,7 +74,7 @@ def LDL(M):
     Input: A Hermitian matrix M.
     Output: L, D and P such that M == P.T * L * D * L.H**-1 * P"""
     P, L = bunchparlett(M)
-    L = simplify_split(L)
+    L = simplify(L)
     D = L ** -1 * P * M * P.H * L.H ** -1
     return L, D, P
 
