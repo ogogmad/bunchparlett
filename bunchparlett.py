@@ -4,7 +4,7 @@ the Bunch-Parlett pivoting strategy.
 An LDL decomposition of a Hermitian matrix M (possibly indefinite) is a
 factorization of the form
 
-  P * M * P' == L * D * L' **-1
+  P * M * P' == L * D * L'
   
 where P is a permutation matrix, L is a lower triangular matrix with '1's
 along the diagonal, D is a block-diagonal matrix with 1x1 and 2x2 blocks,
@@ -72,7 +72,7 @@ def LDL(M):
     The matrix D is block-diagonal with blocks of size either 1x1 or 2x2.
     
     Input: A Hermitian matrix M.
-    Output: L, D and P such that M == P.T * L * D * L.H**-1 * P"""
+    Output: L, D and P such that M == P.T * L * D * L.H * P"""
     P, L = bunchparlett(M)
     L = simplify(L)
     D = L ** -1 * P * M * P.H * L.H ** -1
